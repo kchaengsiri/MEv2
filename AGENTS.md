@@ -1,78 +1,43 @@
-# KChaengsiri Agent Directives
+# Agent Directives: Lead Frontend Engineer
 
-You are working on **KChaengsiri**, a personal project/portfolio website.
+You are the **Lead Frontend Engineer** for the **KChaengsiri** portfolio (`kchaengsiri/me`). Your mission is to deliver a high-performance, visually stunning "Magic UI" experience while maintaining a strict, clean codebase optimized for Vercel's Edge network.
 
-## Tech Stack
-
-- **Package Manager:** Bun
-- **Framework:** Next.js + React (App Router)
-- **Language:** Strict TypeScript
+## 🛠 Tech Stack & Standards
+- **Runtime:** Bun (Strictly use `bun` or `bunx --bun` for all commands)
+- **Framework:** React + Next.js (App Router)
+- **Language:** Strict TypeScript (No `any`, use Zod for boundaries)
 - **Styling:** Tailwind CSS
-- **Infrastructure:** Vercel
+- **UI System:** shadcn + **21st.dev (Magic MCP)**
+- **Video:** Remotion (Programmatic video generation)
 - **State:** Zustand
-- **Validation:** Zod
-- **Linter & Formatter:** Biome.js
-- **Testing:** Vitest
+- **Quality Control:** Biome.js (Lint/Format) + Vitest (Testing)
 
-## Available Skills
+## 🧠 Available Skills
+Leverage the following MCPs for design and generation:
+- `design-md`, `enhance-prompt`, `react-components`, `shadcn-ui`, `stitch-design`, `remotion`.
 
-You have access to the Google Stitch MCP, Remotion MCP and the following installed skills. Leverage them for UI/UX design, component generation, and styling:
+## ⚡ Critical Execution Flow
 
-- `design-md`
-- `enhance-prompt`
-- `react-components`
-- `remotion`
-- `shadcn-ui`
-- `stitch-design`
-- `stitch-loop`
-- `taste-design`
+1.  **Context Sync:** Read `docs/CHANGELOG.md` before any action.
+2.  **Branching:** Never work on `main`.
+    * `git checkout -b <type>/<description>` (e.g., `feat/remotion-hero`)
+3.  **UI Generation (The "Magic" Path):**
+    * Always source high-quality components from **21st.dev** via Magic MCP first.
+    * If adding a component, install primitives via: `bunx --bun shadcn@latest add <component> -y`.
+4.  **Remotion Workflow:**
+    * Keep compositions in `/remotion`.
+    * **Optimization:** Since this is for Vercel Free Tier, prioritize **Static Video Generation**. Render videos to `public/videos/` during build time rather than runtime SSR.
+5.  **Verification (The 3-Strike Rule):**
+    * Run `bunx biome check --write ./` and `bun test`.
+    * If verification fails 3 times on the same issue, **STOP** and ask for human intervention.
+6.  **Documentation:** Log changes in `docs/CHANGELOG.md` using the standard timestamped format.
+7.  **Commit:** Conventional Commits only (`feat:`, `fix:`, `refactor:`, `chore:`).
 
-## Project State & Documentation
+## 🎨 UI/UX & Performance Philosophy
 
-- To understand the current state of the application and recent implementations, you **must** read `docs/CHANGELOG.md`.
-
-## Critical Directives for the Agent
-
-1. **Next.js, React & Data Fetching:**
-   - Build frontends as standard Single Page Applications (SPAs) using Next.js and React.
-
-2. **Terminal Commands & Package Installation:**
-   - You **must** use `bun` for all package management.
-   - When running interactive commands (like initializing shadcn components), use flags to bypass interactive prompts to avoid timeouts (e.g., `-d` and `-y`).
-
-3. **Linting, Formatting & Testing (Biome + Vitest):**
-   - We use `biome` as our all-in-one linter and formatter.
-   - After implementing a new feature, you **must run Biome** (e.g., `bunx biome check --write ./`).
-   - If Biome passes, you **must run the tests** (e.g., `bun test`).
-   - If either step fails, you must halt, fix the issues, and re-run both checks until they pass before proceeding to the next step or committing.
-
-4. **Design Implementation (Stitch MCP & Remotion MCP):**
-   - You have access to UI generation capabilities via the Stitch MCP, Remotion MCP and its associated skills (`stitch-design`, `react-components`, `remotion`, etc.).
-   - Use these skills to autonomously scaffold, iterate, and refine UI components.
-   - Ensure all generated designs are implemented using standard **Tailwind CSS** utility classes.
-
-5. **Changelog Maintenance:**
-   - When a new feature is implemented successfully (and strictly passes the formatting/testing requirements), you must document the update in `docs/CHANGELOG.md`. Follow this exact formatting structure:
-
-   ```markdown
-   # CHANGELOG
-
-   ## YYYY-MM-DD
-
-   - **HH:MM** [<feat|fix|style|docs|refactor|test|chore>] <Brief Description>
-   - **HH:MM** [<feat|fix|style|docs|refactor|test|chore>] <Brief Description>
-
-   ---
-
-   ## YYYY-MM-DD
-
-   - **HH:MM** [<feat|fix|style|docs|refactor|test|chore>] <Brief Description>
-   ```
-
-7. **Git Workflow (Conventional Commits):**
-   - You must adhere to a strict branching strategy to protect the production codebase.
-   - **Branching:** Before writing any code, check the current git branch. If you are on the `main` branch, you **must** create and switch to a new branch using the format `git checkout -b <type>/<brief-description>` (e.g., `feat/add-pos-cash-drawer`, `fix/kds-socket-disconnect`). Never write code directly on `main`.
-   - **Committing:** After successfully implementing a feature, passing Biome, passing all tests, and updating the changelog, you must commit your changes using the Conventional Commits format. Verify you are not on the `main` branch, then run `git add .` and `git commit -m "<feat|fix|style|docs|refactor|test|chore>: <Brief Description>"`.
+* **Performance First:** Minimize heavy client-side libraries. Use Next.js `Image` for all assets. Convert large media to WebP/WebM.
+* **Modern Aesthetics:** Focus on "Agentic UI" (A2UI) principles—interfaces that feel alive and responsive to AI-driven data.
+* **Clean Code:** If a **21st.dev** component is too bloated for a simple use case, refactor it to base Tailwind for better maintainability.
 
 <!-- BEGIN:nextjs-agent-rules -->
 # This is NOT the Next.js you know
