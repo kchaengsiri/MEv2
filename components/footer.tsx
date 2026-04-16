@@ -2,23 +2,33 @@
 
 import { motion } from 'motion/react';
 import { EDUCATIONS, EXPERIENCES } from '@/lib/constants'
+import { FanCoral } from '@/components/fan-coral';
+import { WaveBackground } from '@/components/wave-background';
 
 export function Footer() {
   return (
-    <footer id="contact" className="relative bg-ocean-deep">
-      {/* Wave divider */}
-      <svg
-        className="absolute -top-px left-0 w-full h-12 text-background"
-        viewBox="0 0 1440 48"
-        preserveAspectRatio="none"
-        aria-hidden="true"
+    <footer className="relative bg-ocean-deep">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
       >
-        <path d="M0,0 C360,48 720,0 1080,24 C1260,36 1350,12 1440,0 L1440,48 L0,48 Z" fill="currentColor" />
-      </svg>
+        {/* Wave divider */}
+        <svg
+          className="absolute -top-px left-0 w-full h-32 text-ocean-midnight"
+          viewBox="0 0 1440 128"
+          preserveAspectRatio="none"
+          aria-hidden="true"
+        >
+          <path d="M0,128 C128,128 200,88 430,84  1080,128 1260,28 1440,128 L1440,0 L0,0 Z" fill="currentColor" />
+        </svg>
 
-      <div className="relative z-10 mx-auto max-w-4xl pt-20 px-6 text-center">{/* Brand */}</div>
+        <FanCoral />
+        <WaveBackground />
+      </motion.div>
 
-      <div className="mx-auto max-w-6xl px-6 pt-20 pb-10">
+      <div id="contact" className="mx-auto max-w-6xl px-6 pt-40 pb-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Education */}
           <div>

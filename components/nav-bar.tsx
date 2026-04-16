@@ -6,8 +6,8 @@ import { CTAButton } from './cta-button';
 
 const navLinks = [
   { label: 'About', href: '#about' },
+  { label: 'Projects', href: '#projects' },
   { label: 'Skills', href: '#skills' },
-  { label: 'Experience', href: '#experience' },
   { label: 'Contact', href: '#contact' },
 ];
 
@@ -45,12 +45,6 @@ export function NavBar() {
         </nav>
 
         {/* Desktop CTA */}
-        {/* <a
-          href="mailto:kchaengsiri@gmail.com"
-          className="hidden md:inline-flex items-center rounded-full bg-sunset-orange/15 px-4 py-2 text-sm font-medium text-sunset-orange border border-sunset-orange/25 transition-all duration-300 hover:bg-sunset-orange/25 hover:border-sunset-orange/40 active:translate-y-px"
-        >
-          Get in Touch
-        </a> */}
         <CTAButton href="mailto:kchaengsiri@gmail.com" className="hidden md:inline-flex" />
 
         {/* Mobile hamburger */}

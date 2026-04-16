@@ -5,7 +5,7 @@ export function PalmTrees() {
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden hidden md:block">
       {/* Left palm tree */}
       <svg
-        className="absolute -left-8 bottom-12 h-[420px] w-auto opacity-15"
+        className="absolute left-8 bottom-12 h-[420px] w-auto opacity-15"
         style={{
           animation: 'palm-sway 8s ease-in-out infinite',
           transformOrigin: 'bottom center',
@@ -45,7 +45,7 @@ export function PalmTrees() {
 
       {/* Right palm tree — slightly different proportions */}
       <svg
-        className="absolute -right-4 bottom-8 h-[340px] w-auto opacity-10"
+        className="absolute right-4 bottom-8 h-[340px] w-auto opacity-10"
         style={{
           animation: 'palm-sway-alt 10s ease-in-out infinite',
           transformOrigin: 'bottom center',
