@@ -4,7 +4,7 @@ import { motion } from 'motion/react';
 import { GlassCard, GlassCardBadge, GlassCardTitle } from '@/components/glass-card';
 
 interface SkillsSectionProps {
-  skills: { label: string; items: string[] }[]
+  skills: { label: string; items: string[] }[];
 }
 
 export function SkillsSection({ skills }: SkillsSectionProps) {
@@ -23,7 +23,8 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
           </h2>
 
           <p className="mt-3 text-sm bg-linear-to-l from-sand-gold via-sunset-warm to-sand-light bg-clip-text text-transparent sm:text-base">
-            Deep-diving into tech for over 10 years. Just as a reef supports a vast ecosystem, I build resilient, full-stack architectures that power sustainable growth.
+            Deep-diving into tech for over 10 years. Just as a reef supports a vast ecosystem, I build resilient,
+            full-stack architectures that power sustainable growth.
           </p>
         </motion.div>
       </div>
@@ -37,7 +38,6 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
             viewport={{ once: true, margin: '-50px' }}
             className="col-span-1 md:col-span-3"
           >
-
             <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
               {skills.map((skill, index) => (
                 <motion.div
@@ -47,17 +47,14 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
                   transition={{ duration: 0.5, delay: index * 0.08 }}
                   viewport={{ once: true, margin: '-50px' }}
                 >
-                  <GlassCard
-                    hoverRipple
-                    className={`h-full`}
-                  >
-                    <GlassCardTitle className='mb-4 bg-linear-to-br from-sand-light via-sand-gold to-sunset-orange bg-clip-text text-transparent'>
+                  <GlassCard hoverRipple className={`h-full`}>
+                    <GlassCardTitle className="mb-4 bg-linear-to-br from-sand-light via-sand-gold to-sunset-orange bg-clip-text text-transparent">
                       {skill.label}
                     </GlassCardTitle>
 
                     <div className="flex flex-wrap gap-2.5 bg-linear-to-br from-sunset-warm via-sand-gold to-sand-light bg-clip-text text-transparent">
                       {skill.items.map((item) => (
-                        <GlassCardBadge key={item} className='bg-clip-text text-transparent'>
+                        <GlassCardBadge key={item} className="bg-clip-text text-transparent">
                           {item}
                         </GlassCardBadge>
                       ))}
@@ -69,6 +66,6 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
           </motion.div>
         </div>
       </div>
-    </section >
+    </section>
   );
 }

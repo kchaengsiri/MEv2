@@ -1,9 +1,9 @@
 'use client';
 
 import { motion } from 'motion/react';
-import { EDUCATIONS, EXPERIENCES } from '@/lib/constants'
 import { FanCoral } from '@/components/fan-coral';
 import { WaveBackground } from '@/components/wave-background';
+import { EDUCATIONS, EXPERIENCES } from '@/lib/constants';
 
 export function Footer() {
   return (
@@ -108,9 +108,7 @@ export function Footer() {
               <span className="text-xs font-bold text-sunset-orange">KC</span>
             </div>
 
-            <p className="font-semibold text-xs text-foam-white/60">
-              &copy; {new Date().getFullYear()} KChaengsiri
-            </p>
+            <p className="font-semibold text-xs text-foam-white/60">&copy; {new Date().getFullYear()} KChaengsiri</p>
           </div>
         </div>
       </div>

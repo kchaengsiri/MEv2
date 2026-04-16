@@ -12,15 +12,15 @@ interface ProjectItem {
   description: string;
   badges: string[];
   detail: string;
-  accent?: boolean
+  accent?: boolean;
 }
 
 interface ProjectsSectionProps {
-  projects: ProjectItem[]
+  projects: ProjectItem[];
 }
 
 export function ProjectsSection({ projects }: ProjectsSectionProps) {
-  projects = projects || []
+  projects = projects || [];
   return (
     <section id="projects" className="relative z-10 bg-gradient-to-b from-ocean-deep via-background to-background">
       {/* Section header */}
@@ -47,7 +47,9 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
           </motion.div>
 
           <p className="mt-3 max-w-2xl text-sm text-coral-mist/80 sm:text-base">
-            Result-driven Full-Stack Developer with over 10 years of experience architecting scalable Enterprise Web Applications, IoT Platforms, and AI Solutions. Expert in bridging the gap between complex backend architectures and intuitive user experiences.
+            Result-driven Full-Stack Developer with over 10 years of experience architecting scalable Enterprise Web
+            Applications, IoT Platforms, and AI Solutions. Expert in bridging the gap between complex backend
+            architectures and intuitive user experiences.
           </p>
         </motion.div>
       </div>
@@ -68,9 +70,7 @@ export function ProjectsSection({ projects }: ProjectsSectionProps) {
                 hoverRipple
                 className={`h-full ${item.accent ? 'border-sunset-orange/20 bg-gradient-to-br from-[rgba(232,120,58,0.06)] to-[rgba(15,31,58,0.45)]' : ''}`}
               >
-                <GlassCardTitle className={item.accent ? 'text-sunset-orange' : undefined}>
-                  {item.title}
-                </GlassCardTitle>
+                <GlassCardTitle className={item.accent ? 'text-sunset-orange' : undefined}>{item.title}</GlassCardTitle>
                 {item.detail && <p className="mt-1 text-xs font-mono text-coral-mist/60">{item.detail}</p>}
                 <GlassCardDescription>{item.description}</GlassCardDescription>
                 {item.badges && (

@@ -2,11 +2,11 @@
 
 import { motion, useScroll, useTransform } from 'motion/react';
 import { useRef } from 'react';
+import { LocationBadge } from '@/components/location-badge';
 import { PalmTrees } from '@/components/palm-trees';
 import { TextRotator } from '@/components/text-rotator';
 import { WaveBackground } from '@/components/wave-background';
-import { LocationBadge } from '@/components/location-badge';
-import { HERO_TECHS } from '@/lib/constants'
+import { HERO_TECHS } from '@/lib/constants';
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -101,8 +101,8 @@ export function HeroSection() {
             transition={{ delay: 1.0, duration: 0.6 }}
             className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-coral-mist/80 sm:text-base"
           >
-            Over 10 years architecting scalable enterprise systems and platforms. Proven track record delivering high-impact
-            solutions for international brands like the J.League.
+            Over 10 years architecting scalable enterprise systems and platforms. Proven track record delivering
+            high-impact solutions for international brands like the J.League.
           </motion.p>
 
           {/* CTA */}

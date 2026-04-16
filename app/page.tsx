@@ -4,7 +4,7 @@ import { NavBar } from '@/components/nav-bar';
 import { ProjectsSection } from '@/components/projects-section';
 import { SkillsSection } from '@/components/skills-section';
 
-import { PROJECTS, TECH_CATEGORIES } from '@/lib/constants'
+import { PROJECTS, TECH_CATEGORIES } from '@/lib/constants';
 
 export default function Home() {
   return (
