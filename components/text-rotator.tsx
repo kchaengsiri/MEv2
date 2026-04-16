@@ -20,14 +20,18 @@ export function TextRotator({ words, className = '', interval = 3500 }: TextRota
   }, [words.length, interval]);
 
   return (
-    <span className={`relative inline-block align-bottom ${className}`}>
-      {/* Invisible: render ALL phrases stacked to reserve max width */}
-      <span className="invisible block whitespace-nowrap" aria-hidden="true">
-        {words.reduce((a, b) => (a.length > b.length ? a : b), '')}
+    <motion.span
+      layout
+      className={`relative inline-flex align-bottom ${className}`}
+      transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
+    >
+      {/* Invisible: render CURRENT phrase to reserve dynamic width */}
+      <span className="invisible inline-block whitespace-nowrap" aria-hidden="true">
+        {words[currentIndex]}
       </span>
 
-      {/* Visible: animated current phrase, centered in the reserved space */}
-      <AnimatePresence mode="wait">
+      {/* Visible: animated current phrase, centered in the dynamic space */}
+      <AnimatePresence mode="popLayout">
         <motion.span
           key={currentIndex}
           className="absolute inset-0 flex items-center whitespace-nowrap"
@@ -39,6 +43,6 @@ export function TextRotator({ words, className = '', interval = 3500 }: TextRota
           {words[currentIndex]}
         </motion.span>
       </AnimatePresence>
-    </span>
+    </motion.span>
   );
 }

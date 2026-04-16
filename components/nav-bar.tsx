@@ -2,6 +2,7 @@
 
 import { AnimatePresence, motion } from 'motion/react';
 import { useState } from 'react';
+import { CTAButton } from './cta-button';
 
 const navLinks = [
   { label: 'About', href: '#about' },
@@ -26,7 +27,7 @@ export function NavBar() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sunset-orange/20 border border-sunset-orange/30">
             <span className="text-sm font-bold text-sunset-orange">KC</span>
           </div>
-          <span className="text-sm font-semibold text-foam-white hidden sm:inline"></span>
+          {/* <span className="text-sm font-semibold text-foam-white hidden sm:inline">Kitisak Chaengsiri</span> */}
         </a>
 
         {/* Desktop nav links */}
@@ -44,12 +45,13 @@ export function NavBar() {
         </nav>
 
         {/* Desktop CTA */}
-        <a
+        {/* <a
           href="mailto:kchaengsiri@gmail.com"
           className="hidden md:inline-flex items-center rounded-full bg-sunset-orange/15 px-4 py-2 text-sm font-medium text-sunset-orange border border-sunset-orange/25 transition-all duration-300 hover:bg-sunset-orange/25 hover:border-sunset-orange/40 active:translate-y-px"
         >
           Get in Touch
-        </a>
+        </a> */}
+        <CTAButton href="mailto:kchaengsiri@gmail.com" label="Get in Touch" className="hidden md:inline-flex" />
 
         {/* Mobile hamburger */}
         <button

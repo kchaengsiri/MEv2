@@ -1,5 +1,8 @@
 # Changelog
 
+## [2026-04-16] feat: dynamic text rotator width
+- Refactored `TextRotator` to dynamically calculate and animate its width based on the current word using Framer Motion's `layout` prop. This eliminates awkward gaps and ensures a balanced hero section layout.
+
 ## [2026-04-16] chore: update hero headline
 - Updated hero headline to "Where Modern Code Meets the Coral Coast" for improved branding and premium feel.
 

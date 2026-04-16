@@ -1,3 +1,7 @@
+'use client';
+
+import { motion } from 'motion/react';
+
 export function Footer() {
   return (
     <footer id="contact" className="relative bg-ocean-deep">
@@ -11,20 +15,46 @@ export function Footer() {
         <path d="M0,0 C360,48 720,0 1080,24 C1260,36 1350,12 1440,0 L1440,48 L0,48 Z" fill="currentColor" />
       </svg>
 
+      <div className="relative z-10 mx-auto max-w-4xl pt-20 px-6 text-center">{/* Brand */}</div>
+
       <div className="mx-auto max-w-6xl px-6 pt-20 pb-10">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
-          {/* Brand */}
+          {/* Education */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sunset-orange/20 border border-sunset-orange/30">
-                <span className="text-sm font-bold text-sunset-orange">KC</span>
-              </div>
-              <span className="font-semibold text-foam-white">Kitisak Chaengsiri</span>
-            </div>
-            <p className="text-sm text-coral-mist/70 leading-relaxed max-w-xs">
-              Lead Full-Stack Developer, AI & RAG Specialist, and IoT Architect. Building global tech from Phuket,
-              Thailand.
-            </p>
+            <h4 className="text-sm font-semibold text-foam-white mb-4 uppercase tracking-wider">Education</h4>
+            <p className="text-sm text-coral-mist/70">B.Sc. Information Technology</p>
+            <p className="text-xs text-coral-mist/50 font-mono mt-1">at Prince of Songkla University</p>
+          </div>
+
+          {/* Experience */}
+          <div>
+            <h4 className="text-sm font-semibold text-foam-white mb-4 uppercase tracking-wider">Experience</h4>
+            <ul className="flex flex-col space-y-2 list-disc">
+              <li className="">
+                <p className="text-sm text-coral-mist/70">Lead Full-Stack Developer & AI Engineer</p>
+                <p className="text-xs text-coral-mist/50 font-mono mt-1">Turfmapp</p>
+              </li>
+              <li>
+                <p className="text-sm text-coral-mist/70">Senior Full-Stack Developer & IoT Engineer</p>
+                <p className="text-xs text-coral-mist/50 font-mono mt-1">Smart&Connective</p>
+              </li>
+              <li>
+                <p className="text-sm text-coral-mist/70">Full-Stack Developer</p>
+                <p className="text-xs text-coral-mist/50 font-mono mt-1">IMT-ASE</p>
+              </li>
+              <li>
+                <p className="text-sm text-coral-mist/70">POS & PMS System Support</p>
+                <p className="text-xs text-coral-mist/50 font-mono mt-1">NATechnosys</p>
+              </li>
+              <li>
+                <p className="text-sm text-coral-mist/70">Administrator & IT Support</p>
+                <p className="text-xs text-coral-mist/50 font-mono mt-1">WANNET</p>
+              </li>
+              <li>
+                <p className="text-sm text-coral-mist/70">Freelance Software developer</p>
+                <p className="text-xs text-coral-mist/50 font-mono mt-1">Self-employed</p>
+              </li>
+            </ul>
           </div>
 
           {/* Links */}
@@ -66,21 +96,48 @@ export function Footer() {
                   kchaengsiri@gmail.com
                 </a>
               </li>
-            </ul>
-          </div>
 
-          {/* Education */}
-          <div>
-            <h4 className="text-sm font-semibold text-foam-white mb-4 uppercase tracking-wider">Education</h4>
-            <p className="text-sm text-coral-mist/70">B.Sc. Information Technology</p>
-            <p className="text-xs text-coral-mist/50 font-mono mt-1">Prince of Songkla University, 2009 - 2012</p>
+              <li>
+                {/* Location badge */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3, duration: 0.6 }}
+                  className="mb-8 inline-flex items-center gap-2 rounded-full glass-subtle border border-ocean-teal/20 px-4 py-2"
+                >
+                  <svg
+                    className="h-4 w-4 text-sunset-orange"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    strokeWidth={2}
+                    aria-hidden="true"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                    />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  <span className="text-xs font-medium text-coral-mist">Phuket, Thailand</span>
+                </motion.div>
+              </li>
+            </ul>
           </div>
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-12 pt-6 border-t border-ocean-teal/15 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-coral-mist/40">Built with warmth from Phuket</p>
-          <p className="text-xs text-coral-mist/40">&copy; {new Date().getFullYear()} Kitisak Chaengsiri</p>
+        <div className="mt-12 pt-6 border-t border-ocean-teal/15 flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex items-center gap-2 mb-4">
+            <div className="flex h-6 w-6 items-center justify-center rounded-sm bg-sunset-orange/20 border border-sunset-orange/30">
+              <span className="text-xs font-bold text-sunset-orange">KC</span>
+            </div>
+
+            <p className="font-semibold text-xs text-foam-white/60">
+              &copy; {new Date().getFullYear()} Kitisak Chaengsiri
+            </p>
+          </div>
         </div>
       </div>
     </footer>

@@ -106,11 +106,11 @@ export function HeroSection() {
             transition={{ delay: 0.8, duration: 0.6 }}
             className="mt-6 flex items-center justify-center gap-2 text-lg text-coral-mist sm:text-xl"
           >
-            <span className="text-foam-white/60">I&apos;m a</span>
+            <span className="text-foam-white/60">I&apos;m</span>
             <TextRotator
-              words={['Lead Full-Stack Developer', 'AI & RAG Specialist', 'IoT Architect', 'Tech Team Leader']}
+              words={['Kitisak Chaengsiri', 'a Full-Stack Developer', 'an Agentic AI Developer', 'the RAG Specialist']}
               className="font-semibold text-sunset-orange"
-              interval={3500}
+              interval={3000}
             />
           </motion.div>
 
@@ -121,8 +121,8 @@ export function HeroSection() {
             transition={{ delay: 1.0, duration: 0.6 }}
             className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-coral-mist/80 sm:text-base"
           >
-            11+ years architecting scalable enterprise systems, conversational AI agents, and IoT platforms. Proven
-            track record delivering high-impact solutions for international brands like the J.League.
+            10+ years architecting scalable enterprise systems and platforms. Proven track record delivering high-impact
+            solutions for international brands like the J.League.
           </motion.p>
 
           {/* CTA */}
@@ -155,9 +155,9 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="mt-16 flex items-center justify-center gap-6 opacity-40"
+            className="mt-16 flex flex-wrap items-center justify-center gap-6 opacity-40 overflow-hidden"
           >
-            {['TypeScript', 'Python', 'React', 'Next.js', 'AWS'].map((tech) => (
+            {['Django', 'FastAPI', 'Node.JS', 'Angular', 'React', 'Next.JS', 'Vite'].map((tech) => (
               <span key={tech} className="text-xs font-mono text-coral-mist/60 uppercase tracking-widest">
                 {tech}
               </span>
