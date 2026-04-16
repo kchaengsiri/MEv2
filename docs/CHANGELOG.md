@@ -1,5 +1,8 @@
 # Changelog
 
+## [2026-04-16] chore: update hero headline
+- Updated hero headline to "Where Modern Code Meets the Coral Coast" for improved branding and premium feel.
+
 ## [2026-04-16] feat: Remotion ocean wave neural network background
 
 ### Added

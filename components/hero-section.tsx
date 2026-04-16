@@ -92,10 +92,10 @@ export function HeroSection() {
             transition={{ delay: 0.5, duration: 0.7 }}
             className="text-4xl font-bold tracking-tight text-foam-white sm:text-5xl lg:text-6xl"
           >
-            Building Global Tech
+            Where Modern Code
             <br />
             <span className="bg-gradient-to-r from-sunset-orange via-sunset-warm to-sand-gold bg-clip-text text-transparent">
-              from the Island
+              Meets the Coral Coast
             </span>
           </motion.h1>
 

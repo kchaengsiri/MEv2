@@ -26,7 +26,7 @@ export function NavBar() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sunset-orange/20 border border-sunset-orange/30">
             <span className="text-sm font-bold text-sunset-orange">KC</span>
           </div>
-          <span className="text-sm font-semibold text-foam-white hidden sm:inline">Kitisak C.</span>
+          <span className="text-sm font-semibold text-foam-white hidden sm:inline"></span>
         </a>
 
         {/* Desktop nav links */}
