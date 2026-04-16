@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'motion/react';
+import { EDUCATIONS, EXPERIENCES } from '@/lib/constants'
 
 export function Footer() {
   return (
@@ -21,39 +22,29 @@ export function Footer() {
         <div className="grid grid-cols-1 gap-10 md:grid-cols-3">
           {/* Education */}
           <div>
-            <h4 className="text-sm font-semibold text-foam-white mb-4 uppercase tracking-wider">Education</h4>
-            <p className="text-sm text-coral-mist/70">B.Sc. Information Technology</p>
-            <p className="text-xs text-coral-mist/50 font-mono mt-1">at Prince of Songkla University</p>
+            <h4 className="text-sm font-semibold text-foam-white mb-4 uppercase tracking-wider">Educations</h4>
+
+            <ul className="flex flex-col space-y-4">
+              {EDUCATIONS.map((item, index) => (
+                <li key={`education-${index}`} className="">
+                  <p className="font-semibold text-sm text-coral-mist/70">{item.title}</p>
+                  <p className="text-xs text-coral-mist/50 font-mono mt-1">{item.school}</p>
+                </li>
+              ))}
+            </ul>
           </div>
 
           {/* Experience */}
           <div>
-            <h4 className="text-sm font-semibold text-foam-white mb-4 uppercase tracking-wider">Experience</h4>
-            <ul className="flex flex-col space-y-2 list-disc">
-              <li className="">
-                <p className="text-sm text-coral-mist/70">Lead Full-Stack Developer & AI Engineer</p>
-                <p className="text-xs text-coral-mist/50 font-mono mt-1">Turfmapp</p>
-              </li>
-              <li>
-                <p className="text-sm text-coral-mist/70">Senior Full-Stack Developer & IoT Engineer</p>
-                <p className="text-xs text-coral-mist/50 font-mono mt-1">Smart&Connective</p>
-              </li>
-              <li>
-                <p className="text-sm text-coral-mist/70">Full-Stack Developer</p>
-                <p className="text-xs text-coral-mist/50 font-mono mt-1">IMT-ASE</p>
-              </li>
-              <li>
-                <p className="text-sm text-coral-mist/70">POS & PMS System Support</p>
-                <p className="text-xs text-coral-mist/50 font-mono mt-1">NATechnosys</p>
-              </li>
-              <li>
-                <p className="text-sm text-coral-mist/70">Administrator & IT Support</p>
-                <p className="text-xs text-coral-mist/50 font-mono mt-1">WANNET</p>
-              </li>
-              <li>
-                <p className="text-sm text-coral-mist/70">Freelance Software developer</p>
-                <p className="text-xs text-coral-mist/50 font-mono mt-1">Self-employed</p>
-              </li>
+            <h4 className="text-sm font-semibold text-foam-white mb-4 uppercase tracking-wider">Experiences</h4>
+
+            <ul className="flex flex-col space-y-4">
+              {EXPERIENCES.map((item, index) => (
+                <li key={`experience-${index}`} className="">
+                  <p className="font-semibold text-sm text-coral-mist/70">{item.title}</p>
+                  <p className="text-xs text-coral-mist/50 font-mono mt-1">{item.company}</p>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -96,33 +87,6 @@ export function Footer() {
                   kchaengsiri@gmail.com
                 </a>
               </li>
-
-              <li>
-                {/* Location badge */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3, duration: 0.6 }}
-                  className="mb-8 inline-flex items-center gap-2 rounded-full glass-subtle border border-ocean-teal/20 px-4 py-2"
-                >
-                  <svg
-                    className="h-4 w-4 text-sunset-orange"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={2}
-                    aria-hidden="true"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-                    />
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                  </svg>
-                  <span className="text-xs font-medium text-coral-mist">Phuket, Thailand</span>
-                </motion.div>
-              </li>
             </ul>
           </div>
         </div>
@@ -135,7 +99,7 @@ export function Footer() {
             </div>
 
             <p className="font-semibold text-xs text-foam-white/60">
-              &copy; {new Date().getFullYear()} Kitisak Chaengsiri
+              &copy; {new Date().getFullYear()} KChaengsiri
             </p>
           </div>
         </div>

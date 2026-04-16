@@ -2,82 +2,8 @@
 
 import { motion } from 'motion/react';
 import { GlassCard, GlassCardBadge, GlassCardDescription, GlassCardTitle } from '@/components/glass-card';
+import { PROJECTS, TECH_CATEGORIES } from '@/lib/constants'
 
-const experiences = [
-  {
-    id: 'summary',
-    span: 'col-span-1 md:col-span-2 md:row-span-2',
-    title: 'The Island Engineer',
-    description:
-      'Result-driven Lead Full-Stack Developer & AI Specialist with over 11 years of experience architecting scalable Enterprise Web Systems, IoT Platforms, and AI Agents. Expert in bridging the gap between complex backend architectures and intuitive user experiences.',
-    badges: ['Phuket-based', 'Remote-first', '11+ Years'],
-    accent: true,
-  },
-  {
-    id: 'ai-rag',
-    span: 'col-span-1 md:row-span-2',
-    title: 'AI & RAG Systems',
-    description:
-      'Architected "Football AI" — a domain-specific conversational agent using RAG and ReAct patterns, enabling natural language queries over complex sports datasets. Built AI-driven content strategy tools reducing manual research by 50%.',
-    badges: ['LangChain', 'ReAct', 'Vector DB'],
-    detail: 'Turfmapp — Oct 2021 - Nov 2025',
-  },
-  {
-    id: 'jleague',
-    span: 'col-span-1',
-    title: 'J.League International Portal',
-    description:
-      'Engineered a high-traffic, multilingual CMS using Django/Wagtail. Integrated automated media pipelines for real-time match highlights and YouTube Live streaming.',
-    badges: ['Django', 'Wagtail', 'Multilingual'],
-  },
-  {
-    id: 'iot',
-    span: 'col-span-1',
-    title: 'IoT Platforms',
-    description:
-      'Developed scalable energy conservation systems for hotels using Angular, Hapi.js, and DynamoDB. Engineered Raspberry Pi-based controllers using Flask and MQTT for Z-Wave mesh networks.',
-    badges: ['MQTT', 'Raspberry Pi', 'AWS'],
-    detail: 'Smart & Connective — Jun 2017 - Jul 2021',
-  },
-  {
-    id: 'fullstack',
-    span: 'col-span-1',
-    title: 'Full-Stack Craft',
-    description:
-      'Enterprise web applications using MERN/Next.js and Python (Django/FastAPI). Headless CMS ecosystems with Payload CMS and WordPress. E-commerce storefronts with Shopify and Webflow.',
-    badges: ['Next.js', 'FastAPI', 'Payload CMS'],
-    detail: 'Freelance — May 2012 - Ongoing',
-  },
-  {
-    id: 'tech-stack',
-    span: 'col-span-1 md:col-span-2',
-    title: 'Tech Arsenal',
-    isTechGrid: true,
-  },
-];
-
-const techCategories = [
-  {
-    label: 'AI & Data',
-    items: ['RAG', 'Agentic Workflows', 'LangChain', 'LlamaIndex', 'ElasticSearch'],
-  },
-  {
-    label: 'Languages',
-    items: ['TypeScript', 'Python', 'Lua', 'Node.js'],
-  },
-  {
-    label: 'Backend & DB',
-    items: ['PostgreSQL', 'MongoDB', 'DynamoDB', 'Neo4j', 'Supabase'],
-  },
-  {
-    label: 'Cloud & DevOps',
-    items: ['AWS', 'Docker', 'Linux', 'OpenWrt'],
-  },
-  {
-    label: 'Frontend',
-    items: ['React', 'Next.js', 'Vite', 'Angular', 'React Native'],
-  },
-];
 
 export function BentoGrid() {
   return (
@@ -104,7 +30,7 @@ export function BentoGrid() {
       {/* Bento Grid */}
       <div className="mx-auto max-w-6xl px-6 pb-24">
         <div className="grid grid-cols-1 gap-4 md:grid-cols-3 md:gap-5">
-          {experiences.map((item, index) => (
+          {PROJECTS.map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 24 }}
@@ -149,7 +75,7 @@ function TechGridContent() {
     <div>
       <GlassCardTitle>Tech Arsenal</GlassCardTitle>
       <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3 lg:grid-cols-5">
-        {techCategories.map((cat) => (
+        {TECH_CATEGORIES.map((cat) => (
           <div key={cat.label}>
             <p className="text-xs font-semibold text-sunset-orange/80 uppercase tracking-wider mb-2">{cat.label}</p>
             <ul className="space-y-1">

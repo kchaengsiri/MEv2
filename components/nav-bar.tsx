@@ -27,7 +27,7 @@ export function NavBar() {
           <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-sunset-orange/20 border border-sunset-orange/30">
             <span className="text-sm font-bold text-sunset-orange">KC</span>
           </div>
-          {/* <span className="text-sm font-semibold text-foam-white hidden sm:inline">Kitisak Chaengsiri</span> */}
+          <span className="text-sm font-semibold text-foam-white hidden sm:inline">KChaengsiri</span>
         </a>
 
         {/* Desktop nav links */}
@@ -51,7 +51,7 @@ export function NavBar() {
         >
           Get in Touch
         </a> */}
-        <CTAButton href="mailto:kchaengsiri@gmail.com" label="Get in Touch" className="hidden md:inline-flex" />
+        <CTAButton href="mailto:kchaengsiri@gmail.com" className="hidden md:inline-flex" />
 
         {/* Mobile hamburger */}
         <button

@@ -5,6 +5,8 @@ import { useRef } from 'react';
 import { PalmTrees } from '@/components/palm-trees';
 import { TextRotator } from '@/components/text-rotator';
 import { WaveBackground } from '@/components/wave-background';
+import { LocationBadge } from '@/components/location-badge';
+import { HERO_TECHS } from '@/lib/constants'
 
 export function HeroSection() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -13,7 +15,7 @@ export function HeroSection() {
     offset: ['start start', 'end start'],
   });
 
-  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const heroScale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
   const heroRotate = useTransform(scrollYProgress, [0, 1], [0, -3]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
@@ -61,36 +63,14 @@ export function HeroSection() {
         {/* Hero content */}
         <div className="relative z-10 mx-auto max-w-4xl px-6 text-center">
           {/* Location badge */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.6 }}
-            className="mb-8 inline-flex items-center gap-2 rounded-full glass-subtle border border-ocean-teal/20 px-4 py-2"
-          >
-            <svg
-              className="h-4 w-4 text-sunset-orange"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-              strokeWidth={2}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
-              />
-              <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-            </svg>
-            <span className="text-xs font-medium text-coral-mist">Phuket, Thailand</span>
-          </motion.div>
+          <LocationBadge location="Phuket, Thailand" />
 
           {/* Headline */}
           <motion.h1
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5, duration: 0.7 }}
-            className="text-4xl font-bold tracking-tight text-foam-white sm:text-5xl lg:text-6xl"
+            className="text-3xl font-bold tracking-tight text-foam-white sm:text-5xl lg:text-6xl"
           >
             Where Modern Code
             <br />
@@ -104,12 +84,12 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8, duration: 0.6 }}
-            className="mt-6 flex items-center justify-center gap-2 text-lg text-coral-mist sm:text-xl"
+            className="mt-6 flex flex-col items-center justify-center gap-2 text-lg text-coral-mist sm:text-xl"
           >
-            <span className="text-foam-white/60">I&apos;m</span>
+            <p className="text-foam-white/60">Hello World! I&apos;m Kitisak Chaengsiri.</p>
             <TextRotator
-              words={['Kitisak Chaengsiri', 'a Full-Stack Developer', 'an Agentic AI Developer', 'the RAG Specialist']}
-              className="font-semibold text-sunset-orange"
+              words={['Full-Stack Developer', 'Agentic AI Engineer', 'RAG Specialist']}
+              className="text-xl md:text-4xl font-semibold text-sunset-orange"
               interval={3000}
             />
           </motion.div>
@@ -121,7 +101,7 @@ export function HeroSection() {
             transition={{ delay: 1.0, duration: 0.6 }}
             className="mx-auto mt-6 max-w-xl text-sm leading-relaxed text-coral-mist/80 sm:text-base"
           >
-            10+ years architecting scalable enterprise systems and platforms. Proven track record delivering high-impact
+            Over 10 years architecting scalable enterprise systems and platforms. Proven track record delivering high-impact
             solutions for international brands like the J.League.
           </motion.p>
 
@@ -130,7 +110,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 1.2, duration: 0.6 }}
-            className="mt-10"
+            className="mt-6 md:mt-10"
           >
             <a
               href="#experience"
@@ -155,9 +135,9 @@ export function HeroSection() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 1.5, duration: 0.8 }}
-            className="mt-16 flex flex-wrap items-center justify-center gap-6 opacity-40 overflow-hidden"
+            className="mt-8 md:mt-16 flex flex-wrap items-center justify-center gap-6 opacity-40 overflow-hidden"
           >
-            {['Django', 'FastAPI', 'Node.JS', 'Angular', 'React', 'Next.JS', 'Vite'].map((tech) => (
+            {HERO_TECHS.map((tech) => (
               <span key={tech} className="text-xs font-mono text-coral-mist/60 uppercase tracking-widest">
                 {tech}
               </span>

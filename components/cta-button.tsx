@@ -15,7 +15,7 @@ export function CTAButton({ href, label, className }: CTAButtonProps) {
         className,
       )}
     >
-      {label || 'Get in Touch'}
+      {label || `Let's talk`}
     </a>
   );
 }
