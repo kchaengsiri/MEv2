@@ -15,23 +15,15 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Kitisak Chaengsiri — Tech Lead from Phuket',
+  title: 'Kitisak Chaengsiri',
   description:
-    'Lead Full-Stack Developer, AI & RAG Specialist, and IoT Architect building global tech from the island. 11+ years architecting scalable enterprise systems, AI agents, and IoT platforms.',
-  keywords: [
-    'Kitisak Chaengsiri',
-    'Tech Lead',
-    'Full-Stack Developer',
-    'AI Specialist',
-    'RAG',
-    'IoT Architect',
-    'Phuket',
-    'Thailand',
-  ],
+    'Over 10 years architecting scalable enterprise systems and platforms. Proven track record delivering high-impact solutions for international brands like the J.League.',
+  keywords: ['Kitisak Chaengsiri', 'Full-Stack Developer', 'Agentic AI Engineer', 'RAG Specialist'],
   authors: [{ name: 'Kitisak Chaengsiri' }],
   openGraph: {
-    title: 'Kitisak Chaengsiri — Tech Lead from Phuket',
-    description: 'Building global tech from the island. AI, IoT, and full-stack engineering.',
+    title: 'Kitisak Chaengsiri',
+    description:
+      'Over 10 years architecting scalable enterprise systems and platforms. Proven track record delivering high-impact solutions for international brands like the J.League.',
     type: 'website',
     locale: 'en_US',
   },
