@@ -1,45 +1,41 @@
 # Changelog
 
-## [2026-04-16] feat: dynamic text rotator width
-- Refactored `TextRotator` to dynamically calculate and animate its width based on the current word using Framer Motion's `layout` prop. This eliminates awkward gaps and ensures a balanced hero section layout.
-
-## [2026-04-16] chore: update hero headline
-- Updated hero headline to "Where Modern Code Meets the Coral Coast" for improved branding and premium feel.
-
-## [2026-04-16] feat: Remotion ocean wave neural network background
+## [2026-04-17] feat: Phuket Tech Theme (v1.0.0) & Polish
+Finalized full implementation of the "Sea, Sand, Sun" Phuket-themed landing page, focusing on data refinement, SEO, and component polishing.
 
 ### Added
-- **Remotion Composition** (`remotion/OceanWave.tsx`): 40-node neural network animation with ocean-wave sine motion. Nodes and connection lines pulse with teal/orange colors. Seamlessly loops via angle-based animation. Uses Remotion's deterministic `random()` for seed-based positioning.
-- **Remotion Root** (`remotion/Root.tsx`): Registers OceanWave composition at 1920×1080, 30fps, 5 seconds (150 frames).
-- **Remotion Entry** (`remotion/index.ts`): Standard Remotion entry point calling `registerRoot()`.
-- **Pre-rendered Video** (`public/videos/ocean-wave.webm`): 248.7 kB VP8 WebM rendered at build time — no runtime SSR cost.
-- **Hero Integration** (`components/hero-section.tsx`): Background `<video>` element with `autoPlay loop muted playsInline`, 30% opacity, `mix-blend-lighten` blend mode.
-- **Build Script** (`package.json`): Added `render:ocean` script for `bunx remotion render` → `public/videos/ocean-wave.webm`.
+- **Decorative Components**: Added `FanCoral` (hand-drawn style SVG coral decorative elements) to complete the digital reef theme.
+- **Dynamic Branding**: Replaced the static favicon with a dynamic `app/icon.tsx` generator (Next.js OG) yielding a high-contrast 'KC' brand mark.
 
-### Dependencies
-- Added `remotion@4.0.399` and `@remotion/cli@4.0.399`.
+### Changed & Refined
+- **Projects Data**: Updated `lib/constants.ts` with refined, lead-level project details, specifically enhancing "Open Source Customization" and "Website Development" (Payload CMS, Low-Code).
+- **SEO & Layout**: Simplified and polished OpenGraph metadata in `app/layout.tsx` for improved social sharing presence. Switched typography to `Outfit` for display and `Geist Mono` for code snippets.
+- **Performance**: Enforced 30fps loops and build-time video assets for Vercel Edge optimization.
+
+### Fixed
+- **Hero Navigation**: Adjusted the CTA button in `components/hero-section.tsx` to correctly anchor to `#projects`.
 
 ---
 
-## [2026-04-16] feat: Sea, Sand, Sun Phuket-themed Tech Lead landing page
+## [2026-04-16] feat: Sea, Sand, Sun Core Infrastructure & Animations
+Initial architectural build out of the Phuket-themed Tech Lead landing page.
 
 ### Added
-- **Design System** (`globals.css`): Deep Ocean dark-mode-first color palette using oklch colors. Custom tokens for Ocean, Sunset, Sand, Foam, and Coral color families. Glassmorphism utility classes (`.glass-card`, `.glass-nav`, `.glass-subtle`). CSS keyframe animations: `wave-drift`, `palm-sway`, `sunrise-glow`, `ripple`, `float`, `shimmer`.
-- **Layout** (`layout.tsx`): Outfit display font + Geist Mono code font. SEO metadata with OpenGraph tags. Forced dark mode.
-- **Hero Section** (`components/hero-section.tsx`): Full-viewport hero with scroll-driven scale/rotate animation (Framer Motion). Animated gradient headline, location badge, CTA button, and tech stack row. Composed of WaveBackground, PalmTrees, and TextRotator sub-components.
-- **Wave Background** (`components/wave-background.tsx`): Three-layer animated SVG ocean waves with different speeds, opacities, and gradients. GPU-accelerated translateX animations.
-- **Palm Trees** (`components/palm-trees.tsx`): SVG coconut tree silhouettes with CSS palm-sway animation. Hidden on mobile, positioned at left/right hero edges.
-- **Text Rotator** (`components/text-rotator.tsx`): Letter-by-letter blur/slide animation cycling through role titles using Framer Motion AnimatePresence.
-- **Bento Grid** (`components/bento-grid.tsx`): Asymmetric glass card layout showing experience (Island Engineer, AI/RAG, J.League, IoT, Full-Stack) and a "Tech Arsenal" grid. Staggered reveal animations on scroll.
-- **Glass Card** (`components/glass-card.tsx`): Reusable glassmorphism card with optional water ripple hover effect. Sub-components: GlassCardTitle, GlassCardDescription, GlassCardBadge.
-- **Navigation** (`components/nav-bar.tsx`): Fixed glassmorphism navbar with animated slide-in entry, underline hover effect on links, mobile hamburger with AnimatePresence collapse.
-- **Footer** (`components/footer.tsx`): Wave SVG divider, GitHub/email contact links, education section, "Built with warmth from Phuket" tagline.
+- **Design System** (`app/globals.css`): Deep Ocean dark-mode-first color palette using OKLCH. Custom tokens for Ocean, Sunset, Sand, Foam, and Coral color families. Glassmorphism utilities (`.glass-card`, `.glass-nav`) and CSS keyframe animations (`wave-drift`, `palm-sway`, `sunrise-glow`, `ripple`, `float`, `shimmer`).
+- **Hero Section** (`components/hero-section.tsx`): Full-viewport entry with scroll-driven scale/rotate animations via Framer Motion.
+- **Thematic Components**:
+  - `WaveBackground`: Three-layer animated SVG ocean waves with GPU-accelerated translateX animations.
+  - `PalmTrees`: SVG coconut tree silhouettes with CSS palm-sway animation.
+  - `ProjectsSection` & `BentoGrid`: Asymmetric glass card layout showing experience (Island Engineer, AI/RAG, J.League, IoT) with staggered reveal animations.
+  - `SkillsSection`: Grouped "Tech Arsenal" overview.
+- **Remotion Ocean Background** (`remotion/OceanWave.tsx`): 40-node neural network animation with ocean-wave sine motion. Rendered at build time via `render:ocean` script to a 248.7 kB VP8 WebM (`public/videos/ocean-wave.webm`) for a zero-runtime-cost ambient background.
+- **Dynamic Text Rotator** (`components/text-rotator.tsx`): Letter-by-letter blur/slide animation cycling through role titles. Dynamically calculates and animates width using Framer Motion's `layout` prop to eliminate awkward gaps.
+- **Navigation & Footer**: Fixed glassmorphism navbar with animated slide-in entry and AnimatePresence collapse. Footer includes Wave SVG divider and "Built with warmth from Phuket" tagline.
+
+### Changed
+- **Hero Headline**: Updated to "Where Modern Code Meets the Coral Coast" for improved branding and a premium feel.
+- **Config** (`biome.json`): Enabled `css.parser.tailwindDirectives`, disabled `noArrayIndexKey` (required for letter-by-letter animations).
 
 ### Dependencies
 - Added `motion` (Framer Motion v12) for scroll-driven and entrance animations.
-
-### Config
-- Updated `biome.json`: Enabled `css.parser.tailwindDirectives`, disabled `noArrayIndexKey` (needed for letter-by-letter animations).
-
-### Branch
-- `feat/phuket-tech-theme`
+- Added `remotion@4.0.399` and `@remotion/cli@4.0.399`.
