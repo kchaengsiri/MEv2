@@ -38,7 +38,7 @@ export function SkillsSection({ skills }: SkillsSectionProps) {
             viewport={{ once: true, margin: '-50px' }}
             className="col-span-1 md:col-span-3"
           >
-            <div className="mt-4 grid grid-cols-2 gap-x-6 gap-y-4 sm:grid-cols-3">
+            <div className="mt-4 grid grid-cols-1 gap-x-6 gap-y-4 sm:grid-cols-2 xl:grid-cols-3">
               {skills.map((skill, index) => (
                 <motion.div
                   key={skill.label}
