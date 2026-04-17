@@ -113,7 +113,7 @@ export function HeroSection() {
             className="mt-6 md:mt-10"
           >
             <a
-              href="#experience"
+              href="#projects"
               className="inline-flex items-center rounded-full bg-sunset-orange px-7 py-3 text-sm font-semibold text-ocean-deep transition-all duration-300 hover:bg-sunset-warm active:translate-y-px active:shadow-none shadow-[0_4px_16px_-2px_rgba(232,120,58,0.4)]"
             >
               View My Work

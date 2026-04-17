@@ -189,29 +189,6 @@ export const PROJECTS = [
     accent: true,
   },
   {
-    id: 'tm-open-source-custom',
-    span: 'col-span-1',
-    title: 'Open Source Customization',
-    description:
-      'Engineered bespoke modules and feature extensions for enterprise open-source platforms including Mattermost, Odoo, and Planka. By tailoring these systems to exact business specifications, the custom integrations optimized internal workflows and eliminated operational bottlenecks.',
-    badges: [
-      'React',
-      'Next.js',
-      'Redux',
-      'Sails.js',
-      'Node.js',
-      'PostgreSQL',
-      'Python',
-      'XML',
-      'Docker',
-      'Traefik',
-      'DigitalOcean',
-      'Cloudflare',
-    ],
-    detail: 'Turfmapp',
-    accent: true,
-  },
-  {
     id: 'tm-football-rag-for-ai-chatbot',
     span: 'col-span-1',
     title: 'Football Crawler/Scrapper',
@@ -231,7 +208,7 @@ export const PROJECTS = [
       'Bash',
     ],
     detail: 'Turfmapp',
-    accent: true,
+    accent: false,
   },
   {
     id: 'tm-football-chat-ui',
@@ -260,9 +237,30 @@ export const PROJECTS = [
     detail: 'Turfmapp',
     accent: true,
   },
+
+  {
+    id: 'tm-open-source-custom',
+    span: 'col-span-1',
+    title: 'Open Source Customization',
+    description:
+      'Engineered bespoke modules and feature extensions for enterprise open-source platforms including Mattermost, Odoo, and Planka. By tailoring these systems to exact business specifications, the custom integrations optimized internal workflows and eliminated operational bottlenecks.',
+    badges: ['Odoo', 'Planka', 'Mattermost'],
+    detail: 'Turfmapp',
+    accent: false,
+  },
+  {
+    id: 'tm-website-development',
+    span: 'col-span-1',
+    title: 'Website Development',
+    description:
+      'Accelerating digital delivery through modern low-code/no-code platforms and headless CMS integrations. Engineered to rapidly deploy scalable websites, backed by complex workflow automations that streamline business operations.',
+    badges: ['Payload CMS', 'Bubble', 'Webflow', 'Shopify', 'Make', 'Zapier', 'n8n'],
+    detail: 'Turfmapp',
+    accent: false,
+  },
   {
     id: 'tm-content-maker-v2',
-    span: 'col-span-1 md:col-span-2',
+    span: 'col-span-1 ',
     title: 'Content Maker (CMv2)',
     description:
       'An advanced, AI-driven evolution engineered to automate high-volume content creation. Leveraging ReAct agents and RAG architectures, the system autonomously researches content strategies, generates media guidelines, and utilizes predictive analytics to determine optimal publishing schedules.',
